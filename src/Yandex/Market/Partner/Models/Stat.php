@@ -17,6 +17,18 @@ class Stat extends Model
     protected $shows = null;
 
     protected $detailedStats = null;
+    
+    protected $createdOrders = null;
+    
+    protected $createdOrdersGmv = null;
+    
+    protected $createdOrdersCpaSpending = null;
+    
+    protected $acceptedOrders = null;
+    
+    protected $acceptedOrdersGmv = null;
+    
+    protected $acceptedOrdersCpaSpending = null;
 
     /**
      * @return null
