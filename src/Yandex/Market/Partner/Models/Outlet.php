@@ -42,6 +42,7 @@ class Outlet extends Model
      * @var null|string
      */
     protected $shopOutletId = null;
+    protected $shopOutletCode = null;
 
     /**
      * @var null|enum
@@ -70,6 +71,7 @@ class Outlet extends Model
     protected $emails = null;
     protected $phones = null;
     protected $deliveryRules = null;
+    protected $region = null;
 
     /**
      * Retrieve the id property
@@ -133,6 +135,11 @@ class Outlet extends Model
         return $this->shopOutletId;
     }
 
+    public function getShopOutletCode()
+    {
+        return $this->shopOutletCode;
+    }
+    
     /**
      * @return null|enum
      */
