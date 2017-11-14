@@ -124,14 +124,14 @@ class DeliveryRule extends Model
     /**
      * @return int|null
      */
-    protected function getOrderBefore() {
+    public function getOrderBefore() {
         return $this->orderBefore;
     }
 
     /**
      * @return float|null
      */
-    protected function getPriceFreePickup() {
+    public function getPriceFreePickup() {
         return $this->priceFreePickup;
     }
 
