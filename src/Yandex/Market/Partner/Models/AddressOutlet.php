@@ -7,6 +7,8 @@ use Yandex\Common\Model;
 class AddressOutlet extends Model
 {
 
+    protected $regionId = null;
+
     protected $city = null;
 
     protected $street = null;
@@ -22,6 +24,14 @@ class AddressOutlet extends Model
     protected $additional = null;
 
     protected $km = null;
+
+    /**
+     * @return null
+     */
+    public function getRegionId()
+    {
+        return $this->regionId;
+    }
 
     /**
      * @return null

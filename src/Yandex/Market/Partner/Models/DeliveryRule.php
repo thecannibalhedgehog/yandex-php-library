@@ -14,7 +14,12 @@ class DeliveryRule extends Model
     /**
      * @var integer|null
      */
-    protected $dateSwitchHour = null;
+    protected $deliveryServiceId = null;
+
+    /**
+     * @var integer|null
+     */
+    protected $maxDeliveryDays = null;
 
     /**
      * @var integer|null
@@ -24,7 +29,22 @@ class DeliveryRule extends Model
     /**
      * @var integer|null
      */
-    protected $maxDeliveryDays = null;
+    protected $orderBefore = null;
+
+    /**
+     * @var float|null
+     */
+    protected $priceFreePickup = null;
+
+    /**
+     * @var boolean|null
+     */
+    protected $unspecifiedDeliveryInterval = null;
+
+    /**
+     * @var integer|null
+     */
+    protected $dateSwitchHour = null;
 
     /**
      * @var float|null
@@ -54,11 +74,6 @@ class DeliveryRule extends Model
     /**
      * @var boolean|null
      */
-    protected $unspecifiedDeliveryInterval = null;
-
-    /**
-     * @var boolean|null
-     */
     protected $workInHoliday = null;
 
     protected $mappingClasses = [
@@ -72,6 +87,14 @@ class DeliveryRule extends Model
     public function getCost()
     {
         return $this->cost;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getDeliveryServiceId()
+    {
+        return $this->deliveryServiceId;
     }
 
     /**
@@ -96,6 +119,28 @@ class DeliveryRule extends Model
     public function getMaxDeliveryDays()
     {
         return $this->maxDeliveryDays;
+    }
+
+    /**
+     * @return int|null
+     */
+    protected function getOrderBefore() {
+        return $this->orderBefore;
+    }
+
+    /**
+     * @return float|null
+     */
+    protected function getPriceFreePickup() {
+        return $this->priceFreePickup;
+    }
+
+    /**
+     * @return bool|null
+     */
+    public function getUnspecifiedDeliveryInterval()
+    {
+        return $this->unspecifiedDeliveryInterval;
     }
 
     /**
@@ -136,14 +181,6 @@ class DeliveryRule extends Model
     public function getShipperName()
     {
         return $this->shipperName;
-    }
-
-    /**
-     * @return bool|null
-     */
-    public function getUnspecifiedDeliveryInterval()
-    {
-        return $this->unspecifiedDeliveryInterval;
     }
 
     /**

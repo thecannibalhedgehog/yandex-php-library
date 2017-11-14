@@ -1,5 +1,4 @@
 <?php
-
 namespace Yandex\Market\Partner\Models;
 
 use Yandex\Common\Model;
@@ -13,7 +12,9 @@ class Outlet extends Model
         'address' => 'Yandex\Market\Partner\Models\AddressOutlet',
         'deliveryRules' => 'Yandex\Market\Partner\Models\DeliveryRules',
         'emails' => 'Yandex\Common\StringCollection',
-        'phones' => 'Yandex\Common\StringCollection'
+        'phones' => 'Yandex\Common\StringCollection',
+        'region' => 'Yandex\Market\Partner\Models\Region',
+        'workingSchedule' => 'Yandex\Market\Partner\Models\WorkingSchedule'
     ];
 
     protected $propNameMap = [];
@@ -42,6 +43,10 @@ class Outlet extends Model
      * @var null|string
      */
     protected $shopOutletId = null;
+
+    /**
+     * @var null|string
+     */
     protected $shopOutletCode = null;
 
     /**
@@ -65,12 +70,38 @@ class Outlet extends Model
     protected $workingTime = null;
 
     /**
+     * @var null|WorkingSchedule
+     */
+    protected $workingSchedule = null;
+
+    /**
+     * @var null|string
+     */
+    protected $coords = null;
+
+    /**
      * @var null|AddressOutlet
      */
     protected $address = null;
+
+    /**
+     * @var null|StringCollection
+     */
     protected $emails = null;
+
+    /**
+     * @var null|StringCollection
+     */
     protected $phones = null;
+
+    /**
+     * @var null|DeliveryRules
+     */
     protected $deliveryRules = null;
+
+    /**
+     * @var null|Region
+     */
     protected $region = null;
 
     /**
@@ -173,6 +204,23 @@ class Outlet extends Model
     }
 
     /**
+     * @return WorkingSchedule|null
+     */
+    public function getWorkingSchedule()
+    {
+        return $this->workingSchedule;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getCoords()
+    {
+        return $this->coords;
+    }
+
+
+    /**
      * @return AddressOutlet|null
      */
     public function getAddress()
@@ -202,5 +250,13 @@ class Outlet extends Model
     public function getPhones()
     {
         return $this->phones;
+    }
+
+    /**
+     * @return Region|null
+     */
+    public function getRegion()
+    {
+        return $this->region;
     }
 }
